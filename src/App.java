@@ -6,18 +6,24 @@ public class App
     {
         Scanner scan = new Scanner(System.in);
         boolean exit = false;
+        int num;
         
-        System.out.println("Please enter a number:");
+        System.out.println("Please enter a number or enter exit :");
         
       
-       while (exit == false)
+       while (!exit)
        {
         try
         {
         String holder = scan.nextLine();
-        int num = Integer.parseInt(holder);
+        if(holder.equalsIgnoreCase("exit"))
+            {
+                break;
+            }
+        num = Integer.parseInt(holder);
         factor(num);
-
+        
+        
         System.out.println("Value you entered: " + num);
         }
         catch (Exception e)
@@ -25,8 +31,6 @@ public class App
             System.out.println("Bad input, please try again.");
         }
        }
-      
-
 
     }
 
